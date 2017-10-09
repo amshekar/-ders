@@ -1,0 +1,51 @@
+Hi Engineer,
+
+Please go through the Job description
+
+Organisation                      : EPAM  India 
+Location                               : Hyderabad
+Experience                         : 5 - 7 Years
+Role                                       : Senior Software Engineer (Angular JS)
+Position                               : Permanent
+Technical skills:
+·         Angular JS
+·         MVC
+·         C# .Net / Asp.net
+·         SQL Server
+
+Job Roles/ Responsibilities:
+
+·         At least 5 years of relevant development experience, including UML, Modelling and Design skills, and expert knowledge of at least one technical area.
+·         Expected to be able to follow, understand, and enhance a defined software development process.
+·         Able to read and understand project and requirement documentation.
+·         Able to create high-quality design, technical and project documentation including documentation of his/her code.
+·         Able to write high-quality non-functional requirement specifications and audit documentation.
+·         Plays the Key Developer and Software Architect roles, and usually also performs a Development Team Lead, Project Coordinator, Reviewer or Auditor role.
+·         Expected to be self-managing, take technical responsibility for a subsystem or a whole project, work without supervision and test his/her work thoroughly using test cases.
+·         Must be a role model for colleagues; creates deliverables in high quality.
+·         Expected to participate in phone conferences; be interviewed by customers; be involved in customer workshops and presentations; visit customers without supervision.
+·         Comfortably able to read, write and speak the Customer’s Communication Language; able to write high-quality unambiguous texts.
+
+ABOUT EPAM:
+Engineering is in our DNA. Since 1993, we’ve helped the world’s leading companies imagine, design, engineer, and deliver software that changes the world. Today, we are more than developers. We are the experts that will take your business to the next level.
+
+AT A GLANCE:
+·         Founded In 1993 US Based Public Company (Nyse:Epam)
+·         Global headcount of 15,000+ Engineers, Designers and Consultants
+·         ISAE 3402, SAS 70 TYPE II, ISO 27001:2005, CMMI 5, SEC GOVERNED
+
+EPAM'S SOLUTIONS:
+·         Core engineering
+·         Advanced technology
+·         Intelligent enterprise
+·         Digital Engagement
+
+“WE ARE CONTINUALLY RECOGNIZED INDUSTRY LEADER”
+·         #1   Forbes’ List of Fastest Growing Companies, IT Category
+·         #10 Forrester’s Top 10 Largest Commerce Service Providers
+·         #9   Gartner’s 25 Fastest-Growing IT Services Providers
+·         #9   Gartner’s Top 20 Business Service Providers in Banking and Securities Industry
+
+“EPAM SCORED THE HIGHEST OF ALL PROVIDERS ON DRIVING INNOVATION AND HELPING TO CREATE INNOVATIVE NEW PRODUCTS.”
+
+Please log on to www.epam.com to know more about us.

@@ -1,0 +1,12 @@
+<div class="row md-whiteframe-z2" flex style="padding:50px;background-color:white;">
+  <h2 style="text-align:center;">Upload Profile of the candidate</h2><br/><br/>
+  <table align="center">
+        <tr>
+          <td>Candidate Name: </td>
+          <td><input type="text" name="userName" ng-model="username" size="31" required></td>
+          <td><input type="file" ngf-select ng-model="picFile" name="file"  ngf-max-size="2MB" required ngf-model-invalid="errorFile"></td>
+          <td><md-button class="md-raised" style="float:left;text-decoration:none;" ng-click="uploadPic(picFile)">Submit</md-button></td>
+        </tr>
+      </table>
+
+</div>

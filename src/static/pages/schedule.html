@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.onDateChange = function(evt){
+                $scope.selectedDate = $scope.date;
+            };
+        });
+    </script>
+    <title>Scheduling Interview</title>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="row" style="background-color:lightblue;padding:10px;">
+    <span><img src="https://www.epam.com/content/dam/epam/global/EPAM_logo.svg" style="width:100px; height:50px;margin-top:5px;"></span>
+</div>
+<div class="row" style="background-color:aliceblue;padding:10px;">
+    <div style="margin-left:75px;margin-right:75px;">
+    <h2>Dear Candidate,</h2>
+    <h3>Thanks for your interest in EPAM Careers.</h3>
+    <h3>We are glad to inform you that you've been shortlisted for the job opportunity with us.</h3>
+    <h3>Please choose your interview timings from the below available slots.</h3>
+    </div>
+</div>
+<div class="row" style="background-color:#e4e4e4;padding:10px;">
+    <div style="margin-left:75px;margin-right:75px;padding:10px;">
+        <b>Choose the Date of Interview:</b> <input type="date" onchange="onDateChange(event)" ng-model="date">
+    </div>
+</div>
+<style>
+    .btn{
+        background-color:green;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+        padding:10px;
+        height:auto;
+        float:right;
+        color:white;
+        font-weight:bold;
+    }
+    .time{
+        background-color:white;
+        padding:10px;
+        width:200px;
+        height:30px;
+        font-weight:bold;
+        text-align:center;
+    }
+    .time:hover{
+        cursor: pointer;
+        background-color:aliceblue;
+        border:1px solid gray;
+        color:white;
+        font-weight:bold;
+    }
+</style>
+<div class="row" style="background-color:#e4e4e4;padding:10px;">
+    <div style="margin-left:75px;margin-right:75px;padding:10px;">
+        <b>Choose the Time:</b><br>
+        <table align="center" width="100%">
+            <tr><td class="time">9:00-10:00</td><td class="time">10:00-11:00</td></tr>
+            <tr><td class="time">11:00-12:00</td><td class="time">12:00-13:00</td></tr>
+            <tr><td class="time">13:00-14:00</td><td class="time">14:00-15:00AM</td></tr>
+            <tr><td class="time">16:00-17:00</td><td class="time">17:00-18:00AM</td></tr>
+        </table>
+    </div>
+    <div class="row" style="background-color:#e4e4e4;padding:10px;">
+    <div style="margin-left:75px;margin-right:75px;padding:10px;margin-bottom:30px;">
+        <button class="btn">Book My Interview Slot</button>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

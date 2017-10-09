@@ -1,0 +1,948 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  height:auto;
+  margin: 0px;
+  padding: 0px;
+  background-color: #F5F5F5;
+}
+
+a {
+  color: #106CC8;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(64, 84, 178, 0.25);
+}
+
+/* Toolbar area */
+
+md-toolbar#header-toolbar {
+  min-height: 250px;
+  margin-bottom: -115px;
+}
+
+md-toolbar#header-toolbar h1 {
+  padding: 8px 20px;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+
+.menu {
+  margin: 10px;
+}
+
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  height: 38px;
+  margin: 16px;
+  min-width: 36px;
+}
+
+.menu .md-button {
+  padding: 4px 12px;
+  margin: 0;
+  min-width: 0;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+}
+  .menu .md-button.active {
+    border-bottom: 2px solid #fff;
+  }
+  .menu a.md-button:hover {
+    background-color: transparent;
+  }
+
+.menu .md-button .md-ripple-container {
+  display: none;
+}
+
+/* Sidenav area */
+
+md-list .md-button {
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+  md-list .md-button.selected {
+    color: #03a9f4;
+  }
+
+  md-sidenav  md-list {
+    padding: 0px 0px 8px 0px;
+  }
+
+
+/* Primary content area */
+
+#content {
+  position: relative;
+  overflow: visible;
+  /* max-width: 1024px; */
+  z-index: 2;
+  margin: auto;
+  border-radius: 3px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+  margin-bottom: 100px;
+}
+#content [ng-view] {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+  #content {
+    min-width: 1024px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #content .site-title {
+    margin-left: -40px;
+    margin-left: -40px;
+  }
+}
+
+#content .site-title h2:first-child {
+  font-size: 3.3em;
+  letter-spacing: -1px;
+  font-weight: 300;
+  margin-top: -120px;
+  margin-bottom: 57px;
+}
+
+#content h2.light {
+  color: #fff;
+}
+
+#content .md-button.contact {
+  background-color: transparent;
+  border: none;
+  width: 48px;
+  height: 48px;
+  margin: 8px auto 16px 0;
+  position: absolute;
+  top: 10px;
+  right: 40px;
+}
+
+#content md-icon.avatar {
+  margin-top: 10px;
+}
+
+#content .md-button.contact > md-icon {
+  fill:black;
+  width:36px;
+  height:36px;
+}
+
+md-button.menuBtn > md-icon {
+  fill:white;
+  width:24px;
+  height:24px;
+}
+
+#content .md-button.contact:active > md-icon {
+  background-color: #dadada;
+  border-radius: 75%;
+  padding:4px;
+  transition: all 100ms ease-out 30ms;
+}
+
+#content img {
+  //display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Utils */
+
+.content-wrapper {
+  position: relative;
+}
+
+/* Typography support coming in 0.8.0 */
+
+md-toolbar h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+}
+  md-toolbar h1.auto {
+    margin: auto;
+  }
+
+.avatar {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
+}
+
+
+md-bottom-sheet  md-icon {
+  margin-right:20px;
+}
+
+span.name {
+  font-weight: bold;
+  font-size:1.1em;
+  padding-left:5px;
+}
+
+
+
+@charset "utf-8";
+
+@font-face {
+    font-family: "Avenir Next";
+    src: url(../fonts/AvenirNextLTPro-Regular.otf) format("woff")
+}
+
+@font-face {
+    font-family: "Avenir Next Bold";
+    src: url(../fonts/AvenirNextLTPro-Bold.otf) format("woff")
+}
+
+@font-face {
+    font-family: "Avenir Next Italic";
+    src: url(../fonts/AvenirNextLTPro-It.otf) format("woff")
+}
+
+@font-face {
+    font-family: "Geometos Rounded";
+    src: url('../fonts/Geometos Rounded.ttf') format("woff")
+}
+
+html, body {
+    font-family: "Avenir Next","Roboto",sans-serif;
+    font-size: 12px;
+    color: #2b2b2b;
+    font-weight: 400;
+    background-color: #F7F7F7;
+}
+
+.clear {
+    clear: both
+}
+
+.site-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    background-color: #F7F7F7;
+}
+
+nav {
+    color: inherit;
+    background-color: #F7F7F7;
+    width: 100%;
+    box-shadow: none;
+    margin: 0 auto;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    height: 120px;
+    left: 0;
+    padding-top: 35px;
+}
+
+nav.fixed {
+    box-shadow: 0 0 3px 1px #999;
+    padding-top: 0;
+    height: 70px;
+}
+
+.site-container nav ul {
+    margin: 3px 0 10px;
+    float: right
+}
+
+.site-container nav ul li > a {
+    text-transform: capitalize;
+    margin: 0 5px;
+    width: 120px;
+    font-family: "Avenir Next Bold","Roboto",sans-serif;
+    font-size: 14px;
+    box-shadow: none;
+}
+
+.site-container nav ul li > a.btn-flat {
+    width: auto;
+    margin: 0 7px;
+}
+
+.site-container nav ul li a.profile-dp-box {
+    width: auto;
+    color: #2b2b2b;
+    font-family: "Avenir Next","Roboto",sans-serif;
+    font-size: 18px;
+}
+
+.site-container nav ul li > a.profile-dp-box:hover {
+    background-color: transparent;
+}
+
+.profile-edit-li {
+    position: relative;
+}
+
+.edit-profile-div {
+    display: none;
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    background-color: transparent;
+    padding: 80px 0 15px;
+    z-index: 2;
+}
+
+.edit-profile-div i {
+    position: absolute;
+    top: 67px;
+    left: 10px;
+    color: #fff;
+    font-size: 58px !important;
+    line-height: 60px !important;
+    height: auto !important;
+}
+
+.edit-profile-div div {
+    background-color: #fff;
+    box-shadow: 0 3px 7px 0 #ddd;
+    padding: 5px 0;
+    z-index: 99;
+}
+
+.profile-edit-li:hover .edit-profile-div {
+    display: block;
+}
+
+.edit-profile-div div a {
+    background-color: #fff;
+    width: 100%;
+    padding: 7px 20px;
+    margin: 0;
+    color: #2b2b2b;
+    height: auto;
+    line-height: 24px;
+    font-family: "Avenir Next Bold","Roboto",sans-serif;
+    font-size: 14px;
+}
+
+.edit-profile-div a:hover {
+    background-color: transparent;
+}
+
+.site-container nav ul img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+}
+
+.site-container nav ul span {
+    display: inline-block;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 15px;
+    width: 110px;
+    vertical-align: top;
+}
+
+.dp {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.editdp {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.site-container .nav-wrapper {
+    margin: 0 auto;
+    width: 90%;
+    height: 70px;
+    background-color: #F7F7F7;
+}
+
+.fav-brand-logo img {
+    height: 35px;
+    max-width: 100%;
+    margin: 10px 0 0
+}
+
+.about-button {
+    color: #000;
+    font-size: 20px
+}
+
+.about-button:hover {
+    background-color: transparent
+}
+
+.login-button {
+    border-radius: 25px;
+    padding: 0 20px;
+    background-color: #000;
+    font-size: 12px;
+    color: #fff
+}
+
+.login-button:hover, .login-button:visited, .login-button:active, .login-button:focus {
+    background-color: #393939 !important;
+    box-shadow: none;
+}
+
+.signup-button {
+    border-radius: 25px;
+    padding: 0 20px;
+    background-color: #00bfd8;
+    font-size: 12px;
+    color: #fff
+}
+
+.signup-button:hover, .signup-button:visited, .signup-button:active, .signup-button:focus {
+    background-color: #09d9f4;
+    box-shadow: none;
+}
+
+.body-container {
+    max-width: 1100px;
+    width: 98%;
+    margin: 0 auto;
+    margin: 150px auto 0;
+}
+
+.design-fav {
+    /*font-family: "Geometos Rounded",sans-serif;*/
+    text-transform: capitalize;
+    font-size: 40px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.design-fav span {
+    color: #FF0065;
+}
+
+.fav-color-font-head {
+    font-size: 26px;
+    text-align: center;
+    line-height: 36px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.submit-color-font {
+    font-family: "Avenir Next Bold","Roboto",sans-serif;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: capitalize;
+    border-radius: 20px;
+    background-color: #000;
+    padding: 10px 30px;
+    font-weight: normal;
+    margin: 30px 0 20px;
+}
+
+.banner {
+    margin: 50px auto 20px;
+    text-align: center;
+    height: 250px;
+    overflow: hidden
+}
+
+.banner .carousel.carousel-slider {
+    max-width: 1022px;
+    height: 100% !important;
+    margin: 0 auto;
+}
+
+.grid-continer {
+    position: relative;
+    max-width: 1042px;
+    margin: 0 auto 100px;
+    text-align: center
+}
+
+.box {
+    padding: 20px;
+    margin: 15px 10px;
+    width: 1200px;
+    background-color: #fff;
+    /*height: 480px;*/
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 1px;
+    box-shadow: 0 0 7px 0 #bbb;
+}
+
+
+.box:hover, .box.active {
+    box-shadow: 0 0 7px 0 rgb(22, 144, 226);
+}
+
+.box-dp {
+    overflow: hidden;
+    text-align: center;
+    width: 285px;
+    height: 185px;
+    background-color: #fff;
+}
+
+.box-dp img {
+    /*    -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
+        filter: grayscale(100%);*/
+    width: 130px;
+    height: 130px;
+    margin-top: 30px;
+    border-radius: 50%;
+}
+.box-dp-circle {
+    overflow: hidden;
+    text-align: center !important;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #e0e0e0;  
+    margin-left:62px;
+    vertical-align:top;
+}
+
+.box-dp-circle img {
+    /*    -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 
+        filter: grayscale(100%);*/
+}
+
+.box-name {
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-location {
+    color: #A09B9B;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 24px;
+    margin-bottom: 5px;
+}
+
+.box-colors {
+    margin: 20px 0;
+    float: left;
+    padding: 7px;
+    background-color: #EAEFF0;
+}
+
+.box-colors div {
+    height: 60px;
+    width: 100px;
+    float: left
+}
+
+.box-fonts {
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    border-bottom: #F1F1F1 solid 1px;
+}
+
+.box-social {
+    text-align: center;
+    padding: 5px
+}
+
+.box-social a {
+    margin: 15px 0 0;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.box-social a i {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.box-social a span {
+    display: inline-block;
+    vertical-align: middle;
+    color: #867C7D;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-size: 14px;
+}
+
+.box-social-dribble i {
+    width: 28px;
+    height: 28px;
+    background: url(../images/login-with-dribble.png) no-repeat center center transparent;
+    background-size: contain;
+}
+
+.box-social-facebook i {
+    background: url(../images/facebook.png) no-repeat center center transparent
+}
+.box-views i{
+    background: url(../images/eye.png) no-repeat center center transparent;
+    background-size: contain;
+}
+.box-social a.box-likes i{
+    width: 22px;
+    background: url(../images/likes.png) no-repeat center center transparent;
+    background-size: contain;
+}
+.box-social a.box-unlikes i{
+    width: 22px;
+    background: url(../images/unlike.png) no-repeat center center transparent;
+    background-size: contain;
+}
+.box-social a.box-dribble i{
+    width: 25px;
+    height: 25px;
+    background: url(../images/dribble-icon.png) no-repeat center center transparent;
+    background-size: contain;
+    margin-right: 20px;
+}
+.box-social a.box-behace i{
+    width: 25px;
+    height: 25px;
+    background: url(../images/behace.png) no-repeat center center transparent;
+    background-size: contain;
+}
+.footer {
+    padding: 30px 0 100px;
+    text-align: center;
+    color: #000;
+    font-size: 18px
+}
+
+nav a.button-collapse {
+    display: none
+}
+
+input.search-header, input.search-header:hover, input.search-header:focus {
+    padding: 3px 25px;
+    margin: 13px 0 0 80px;
+    background-color: #fff;
+    width: 575px; /*width: 375px; if header has 5 menu items along with register and login*/
+    /*width: 515px;*/ /* if header has 4 menu items along with register and login*/
+    /*width: 575px;*/ /* if header has 3 menu items along with register and login*/
+    border-radius: 25px;
+    box-shadow: none !important;
+    border: 1px solid #eae5e5 !important;
+}
+
+.site-container .progress {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+    z-index: 3;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .site-container nav ul {
+        float: none;
+        display: block;
+        max-width: 400px;
+        clear: both;
+        margin: 20px auto 0
+    }
+    .site-container nav ul{
+        text-align: center;
+    }
+    .site-container nav ul li:first-of-type{
+        display: block;
+        width: 100%;
+    }
+    .site-container nav ul li {
+        float: none;
+        display: inline-block;
+    }
+
+    nav .brand-logo {
+        text-align: center;
+        width: 100%;
+        position: relative
+    }
+
+    .body-container {
+        margin-top:120px
+    }
+
+    nav {
+        height: auto;
+        position: relative;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 722px) {
+    .box {
+        width: 46%;
+        height: auto
+    }
+
+    .box-dp {
+        width: 100%;
+        /*height: 140px*/
+    }
+
+    .box-dp-circle {
+        width: 100%;
+        height: 100%
+    }
+    .box-name {
+        margin-top: 15px
+    }
+
+    .box-colors {
+        float: none;
+        height: 75px;
+    }
+
+    .box-colors div {
+        height: 60px;
+        width: 50%;
+        float: left;
+        margin-bottom: 15px;
+    }
+    .box-social a{
+        width: 50%;
+    }
+    .box-social a.right{
+        float: none !important;
+        display: inline-block;
+        width: auto;
+        margin: 20px 10px;
+    }
+    .box-fonts{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+    nav .brand-logo {
+        left: 12%;
+        top: 6px;
+    }
+}
+
+.editprofilebox {
+    margin: 15px auto;
+    width: 500px;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 1px;
+    padding-bottom: 30px;
+}
+.editprofilebox .input-field input:focus, .editprofilebox .input-field input.mandatory{
+    border-bottom: 1px solid #FF0055 !important;
+    box-shadow: 0 1px 0 0 #FF0055 !important
+}
+.editprofilebox .box-colors{
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+}
+.editprofilebox .box-colors div{
+    width: 50%;
+}
+.editprofilebox .dp-box{
+    padding: 50px 0;
+    text-align: center;
+}
+.help-block{
+    text-align: left;
+    position: absolute;
+    top: 42px;
+    color: #FF5722;
+    font-size: 12px;
+}
+.editprofilebox .dp-box a{
+    color: #FF0055;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 18px;
+    display: inline-block;
+    font-weight: bold;
+}
+#edit-image{
+    max-width:550px;
+    width: 95%;
+}
+.modal .modal-footer a, .modal .modal-footer a:hover {
+    text-transform: none !important;
+    font-size: 18px;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
+    line-height: 20px;
+    padding: 7px 30px;
+    margin: 0 0 0 30px !important;
+}
+.cropnsave{
+    box-shadow: none;
+    background-color: #00DEF7 !important;
+    padding: 7px 25px !important;
+    border-radius: 20px;
+    color: #fff;
+    float:right;
+    font-weight: bold;
+    font-size: 14px  !important;
+}
+.cropArea{
+    /*background: url("../images/update_default2.jpg") no-repeat center transparent;*/
+    height: 250px;    
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.cropdiv{
+    background-color: #000;
+    /*margin-bottom: 20px;*/
+    height: 300px;
+    width: 100%;
+}
+
+.edit-font {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    font-size: 16px;
+    color: #9a9a9a
+}
+.toast{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    width:100%;
+    height: 10px;
+    background-color:#f55;
+    padding:0 25px;
+    color: #fff;
+    text-align:center;
+    font-size:14px;
+    font-weight: 300;    
+    font-family: "Avenir Next","Roboto",sans-serif;
+    border-radius: 5px;
+}
+.toast-old {
+    border-radius: 2px;
+    top: 35px;
+    width: auto;
+    clear: both;
+    margin-top: 10px;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    min-height: 48px;
+    line-height: 1.5em;
+    word-break: break-all;
+    background-color: #fbfbfb;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #ff5700;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.toast {
+    box-shadow: 0 0 0 0 rgba(251,251,251, 0.8), 0 1px 5px 0 rgba(251,251,251, 0.8), 0 3px 1px -2px rgba(251,251,251, 0.8);
+}
+.responsive-img-box {
+    max-width: 100%;
+    height: 100%;
+}
+#thankyou-modal{
+    width: 320px;
+    padding: 40px 20px;
+    text-align: center;
+
+}
+#thankyou-modal img{
+    max-width: 100px;
+    margin-bottom: 5px;
+}
+#thankyou-modal p.name{
+    color: #000;
+    font-size: 16px;
+}
+#thankyou-modal p.text{
+    color: #666;
+    font-size: 16px;
+    margin: 20px 0;
+}
+#thankyou-modal .update-profile-button{
+    background-color: #FF0055;
+    padding: 10px 40px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+
+.boxabout {
+    padding: 5px; 
+    margin: 15px 10px;
+    width: 975px;
+    background-color: #fff;
+    /* height: 480px; */
+    display: inline-block;
+    vertical-align: top;
+    /* cursor: pointer; */
+    text-align: left;
+    border-radius: 1px;
+}
+
+

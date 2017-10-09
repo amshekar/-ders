@@ -1,0 +1,21 @@
+numpy
+PyGithub
+google-api-python-client
+twilio
+sklearn
+scipy
+jupyter
+textract
+nltk
+Flask
+Flask-HTTPAuth
+Flask-RESTful
+Jinja2
+MarkupSafe
+Werkzeug
+itsdangerous
+six
+pdfminer
+pdf2text
+# install numpy + mkl for scipy from http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
+# numpy-1.13.1+mkl-cp36-cp36m-win32.whl followed by scipy (scipy‑1.0.0b1‑cp36‑cp36m‑win32.whl)

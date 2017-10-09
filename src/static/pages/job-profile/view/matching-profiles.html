@@ -1,0 +1,49 @@
+<div>
+
+    <div class="row">
+            <div class="box" style="width: 1178px;">
+                <div><h3>{{selectedJobProfile.title}} : {{selectedJobProfile.experience}} <span style="float:right">{{profile.location}}</span></h3></div>
+                <div>{{selectedJobProfile.description}}</div>
+            </div>
+    </div>
+
+    <div class="box" ng-repeat="profile in matchingProfiles" style="width:250px!important;">
+            <div>
+                <input type="checkbox">
+            </div>
+            <div class="box-dp" style="width:245px!important;">
+                <img ng-src="{{profile.picture||'/static/assets/images/user.png'}}" alt="favepic" class="responsive-img">
+            </div>
+            <div class="box-name">{{profile.email}}</div>
+            <!-- <div class="box-location">Social Score: {{profile.githubrank}}</div>
+            <div class="box-location">Matching Score: {{profile.fullscore}}</div> -->
+            <div class="box-colors">
+                    <div class="color-one" ng-style="{'background-color':'white'}" style="font-size:15px;margin:3px;text-align:center;padding: 5px;">
+                        <div>
+                            Social Score<br>
+                            <h3 style="text-align:center;margin: 2px;padding: 5px;">{{profile.githubrank}}</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="color-two" ng-style="{'background-color':'white'}" style="font-size:15px;;margin:3px;text-align:center;padding: 5px;">
+                        <div>
+                            Match Score<br>
+                            <h3 style="text-align:center;margin: 2px;padding: 5px;">{{profile.fullscore}}</h3>
+                            
+                        </div>
+                    </div>
+            </div>          
+            <div class="box-fonts">{{profile.mobile||"mobile"}}</div>
+            <div class="box-social">
+                    <md-button class="md-title" style="float:left;text-decoration:none;">View Profile</md-button>
+                    <!-- <md-button class="md-primary"  style="float:right;text-decoration:none;">Invite</md-button> -->
+                    <md-button md-no-ink ng-click="sendInvite(profile.email);showContactOptions($event);" aria-label="Share">Invite
+                            <md-tooltip>Invite</md-tooltip>
+                            <md-icon md-svg-icon="share"></md-icon>
+                          </md-button>
+            </div>
+        </div>
+    </div>
+
+
+    

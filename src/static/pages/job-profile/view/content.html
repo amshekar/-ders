@@ -1,0 +1,17 @@
+<div style="margin:10px;">
+	<h2>Active Job Profiles: {{jobProfiles.length}}
+		<span><md-button class="md-primary" style="float:right;text-decoration:none;">Add Profile</md-button></span>
+	</h2>
+</div>
+<div ng-repeat="profile in jobProfiles track by $index" class="row">
+	<div class="box" ng-click="openMatchingProfiles(profile._id)">
+		<div><h3>{{profile.title}} : {{profile.experience}} <span style="float:right">{{profile.Location}}</span></h3></div>
+		<div>{{profile.description}}</div>
+		<div class="box-fonts"></div>
+		<div class="box-social">		
+
+				<md-button class="md-title" style="float:left;text-decoration:none;"># Matches: 10</md-button>
+				<md-button class="md-primary"  style="float:right;text-decoration:none;">View Matching Profiles</md-button>
+		</div>
+	</div>
+</div>
